@@ -2,7 +2,7 @@
 
 ## Good Links
 
-https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat
+{% EMBED URL="https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat" %}
 
 
 {% hint style="info" %}
@@ -19,7 +19,7 @@ By default, the Apache log configuration file defines two print formats: combine
 
 	LogFormat "%h %l %u %t \"%r\" %>s %b" 
 
-'''Customized format:'''
+```Customized format:```
 
 {% code-tabs %}
 {% code-tabs-item title="payload.txt" %}
