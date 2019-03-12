@@ -43,34 +43,35 @@ Field description
 ------------------------
 
 Format	Key name	Description
-%a	client_addr	Client IP address.
-%A	local_addr	Local private IP address.
-%b	response_size_bytes	Size of response in bytes. When the size of response is null, this field is a hyphen (-).
-%B	response_bytes	Size of response in bytes. When the size of response is null, this field is a hyphen (-).
-%D	request_time_msec	Request time, in microseconds.
-%h	remote_addr	Remote hostname.
-%H	request_protocol_supple	Request protocol.
-%l	remote_ident	Client log name from identd.
-%m	request_method_supple	Request method.
-%p	remote_port	Server port.
-%P	child_process	Child process ID.
-%q	request_query	Query string. If no query string exists, this field is an empty string.
-"%r"	request	Request content, including the request method name, address, and HTTP protocol.
-%s	status	HTTP status code.
-%>s	status	Final HTTP status code.
-%f	filename	Filename.
-%k	keep_alive	Number of keepalive requests.
-%R	response_handler	Handler on the server.
-%t	time_local	Server time.
-%T	request_time_sec	Request time, in seconds.
-%u	remote_user	Client username.
-%U	request_uri_supple	Requested URL path. No query is included in the path.
-%v	server_name	Server name.
-%V	server_name_canonical	Server name conforming to the UseCanonicalName setting.
-%I	bytes_received	Number of bytes received by the server. You must enable the mod_logio module.
-%O	bytes_sent	Number of bytes sent by the server. You must enable the mod_logio module.
-"%{User-Agent}i"	http_user_agent	Client information.
-"%{Rererer}i"	http_referer	Source page.
+
+* %a	client_addr	Client IP address.
+* %A	local_addr	Local private IP address.
+* %b	response_size_bytes	Size of response in bytes. When the size of response is null, this field is a hyphen (-).
+* %B	response_bytes	Size of response in bytes. When the size of response is null, this field is a hyphen (-).
+* %D	request_time_msec	Request time, in microseconds.
+* %h	remote_addr	Remote hostname.
+* %H	request_protocol_supple	Request protocol.
+* %l	remote_ident	Client log name from identd.
+* %m	request_method_supple	Request method.
+* %p	remote_port	Server port.
+* %P	child_process	Child process ID.
+* %q	request_query	Query string. If no query string exists, this field is an empty string.
+* "%r"	request	Request content, including the request method name, address, and HTTP protocol.
+* %s	status	HTTP status code.
+* %>s	status	Final HTTP status code.
+* %f	filename	Filename.
+* %k	keep_alive	Number of keepalive requests.
+* %R	response_handler	Handler on the server.
+* %t	time_local	Server time.
+* %T	request_time_sec	Request time, in seconds.
+* %u	remote_user	Client username.
+* %U	request_uri_supple	Requested URL path. No query is included in the path.
+* %v	server_name	Server name.
+* %V	server_name_canonical	Server name conforming to the UseCanonicalName setting.
+* %I	bytes_received	Number of bytes received by the server. You must enable the mod_logio module.
+* %O	bytes_sent	Number of bytes sent by the server. You must enable the mod_logio module.
+* "%{User-Agent}i"	http_user_agent	Client information.
+* "%{Rererer}i"	http_referer	Source page.
 
 
 
