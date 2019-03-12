@@ -18,30 +18,30 @@ Single quote
 
 	grep %27
 
-Something like user=%27  may indicate a sqlinjection test. Old but a goodie
+Something like user=%27  may indicate a sqlinjection test. Oldie but a goodie
 
-  grep -B 3 -A 2 'INVALID USER' /VAR/LOG/AUTH.LOG
-  grep -B 3 -A 2 'cat=5218+union' access_log*
+    grep -B 3 -A 2 'INVALID USER' /VAR/LOG/AUTH.LOG
+    grep -B 3 -A 2 'cat=5218+union' access_log*
 
-  tail -f /VAR/LOG/AUTH.LOG | grep 'INVALID USER'
+    tail -f /VAR/LOG/AUTH.LOG | grep 'INVALID USER'
 
-  grep "AUTHENTICATION FAILURE" /VAR/LOG/AUTH.LOG | CUT -D '=' -F 8
-  awk '/SSHD.*INVALID USER/ { PRINT $9 }' /VAR/LOG/AUTH.LOG
+    grep "AUTHENTICATION FAILURE" /VAR/LOG/AUTH.LOG | CUT -D '=' -F 8
+    awk '/SSHD.*INVALID USER/ { PRINT $9 }' /VAR/LOG/AUTH.LOG
 
-filter on errors
+Filter on errors
 
-  grep '.ERR&GT;' /VAR/LOG/AUTH.LOG
+    grep '.ERR&GT;' /VAR/LOG/AUTH.LOG
 
-  cat /var/log/apache2/access.log | grep -E "wp-admin|wp-login|POST /"
+    cat /var/log/apache2/access.log | grep -E "wp-admin|wp-login|POST /"
 
- run a for i in statement for numbers in .php files /wordpress/wp-content/r57.php?28 200
+run a for i in statement for numbers in .php files /wordpress/wp-content/r57.php?28 200
 
 Example sqlinjection
 
-  UNION ALL SELECT (SELECT CONCAT(0x7171787671,IFNULL(CAST(ID AS CHAR),0x20),0x616474686c76,IFNULL(CAST(display_name AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_activation_key AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_email AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_login AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_nicename AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_pass AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_registered AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_status AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_url AS CHAR),0x20),0x71707a7871) FROM wp.wp_users LIMIT 0,1),NULL,NULL--
+     UNION ALL SELECT (SELECT CONCAT(0x7171787671,IFNULL(CAST(ID AS CHAR),0x20),0x616474686c76,IFNULL(CAST(display_name AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_activation_key AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_email AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_login AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_nicename AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_pass AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_registered AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_status AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_url AS CHAR),0x20),0x71707a7871) FROM wp.wp_users LIMIT 0,1),NULL,NULL--
 
 
-  grep -B 3 -A 3 'TABLE_NAME+limit' access_log* |awk -F: '{print $1 $2 $5}'
+    grep -B 3 -A 3 'TABLE_NAME+limit' access_log* |awk -F: '{print $1 $2 $5}'
 
 #### check for binary in logs
 
