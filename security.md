@@ -1,5 +1,4 @@
 ## Security
-==========
 
 https://www.cyberciti.biz/tips/linux-security.html
 https://www.suse.com/documentation/sles11/book_hardening/data/sec_sec_prot_general_filepermissions.html
@@ -20,29 +19,29 @@ Red Team docs/ocsp
 https://ired.team/
 
 
-#### Great Podcasts
+### Great Podcasts
 
 * Purple Team
 * ReplayAll
 * DarkNet Diaries
 
 
-#### Good Tubes
+### Good Tubes
 
 https://www.youtube.com/watch?v=uIkxsBgkpj8
 
 
-#### Good blogs mail lists
+### Good blogs mail lists
 
 https://www.schneier.com/
 
 
-#### Good githubs
+### Good githubs
 
 https://github.com/future-architect/vuls
 https://github.com/longld/peda
 
-#### Web based test solutions
+### Web based test solutions
 
 https://securitytrails.com/
 
@@ -59,12 +58,12 @@ https://toolbar.netcraft.com/site_report?url=example.com
 https://cloudpiercer.org/	
 
 
-#### article posts for different work arounds
+### article posts for different work arounds
 
 https://www.ericzhang.me/resolve-cloudflare-ip-leakage/
 
 
-#### Tools
+## Tools
 
 https://securitytrails.com/
 
@@ -161,23 +160,9 @@ https://testssl.sh/
 
 * Carbonblack
 
-
-    <filter>
-        <id>73</id>
-        <rule><![CDATA[(?i:(\%SYSTEMROOT\%))]]></rule>
-        <description>An attacker is trying to locate a file to read or write.</description>
-        <tags>
-            <tag>files</tag>
-            <tag>id</tag>
-        </tags>
-        <impact>4</impact>
-    </filter>
-
-
 #### Apache
 
 * get mod_root
-
 
 #### Detection tools EDR's
 
@@ -196,15 +181,6 @@ https://testssl.sh/
 SIEM
 
 VirusTotal - https://www.virustotal.com/#/home/upload
-
-
-PORT     STATE SERVICE
-53/tcp   open  domain
-80/tcp   open  http
-515/tcp  open  printer
-8443/tcp open  https-alt
-9100/tcp open  jetdirect
-
 https://cybercanon.paloaltonetworks.com/
 
 
@@ -234,6 +210,7 @@ https://www.udemy.com/linux-security/
 https://linuxgeeksin.com/2017/04/16/finger-command-to-display-the-user-detail-in-centos-red-hat-fedora-ubuntu-scientific-linux-and-other-distributions/
 https://www.thegeekstuff.com/2011/03/sar-examples/?utm_source=feedburner
 https://techtalk.gfi.com/57-tips-admin/
+
 ### auditd
 https://www.tecmint.com/create-reports-from-audit-logs-using-aureport-on-centos-rhel/
 https://www.digitalocean.com/community/tutorials/how-to-use-the-linux-auditing-system-on-centos-7
