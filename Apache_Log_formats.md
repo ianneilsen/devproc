@@ -1,11 +1,5 @@
 ## Apache Log formats
 
----
-description: >-
-  This page demos some apache configuration directives.
----
-
-
 ## Good Links
 
 https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat
@@ -17,7 +11,7 @@ By default, the Apache log configuration file defines two print formats: combine
 {% endhint %}
 
 
-Combined format:
+##### Combined format:
 
 	LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 
