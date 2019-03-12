@@ -39,7 +39,7 @@ permission issues between percona mysql and gce sql
 
 #### show all tables engine type
 
-	select TABLE_NAME, ENGINE from information_schema.TABLES where TABLE_SCHEMA='ldec_lensdiscounters';
+	select TABLE_NAME, ENGINE from information_schema.TABLES where TABLE_SCHEMA='db-name';
 
 #### Basic Steps
 
