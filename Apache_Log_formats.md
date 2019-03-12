@@ -4,6 +4,8 @@
 
 {% embed url="https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat" %}
 
+
+
 * https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat
 
 
@@ -13,17 +15,19 @@ By default, the Apache log configuration file defines two print formats: combine
 {% endhint %}
 
 
-#### Combined format:
+### Combined format:
 
 	LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 
-Common format:
-------------------
+
+
+### Common format:
 
 	LogFormat "%h %l %u %t \"%r\" %>s %b" 
 
-Customized format:
---------------------
+
+### Customized format:
+
 
 ```bash
 LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D %f %k %p %q %R %T %I %O" customized
