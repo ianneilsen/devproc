@@ -2,135 +2,135 @@
 
 * [Initial page](README.md)
 * [a - z commands](a-z-nix-commands.md)
-[about]	
-[amazon.md]
-[ambulance-script.md]
-[ansible.md]
-[Apache_Log_formats.md]
-[apache.md]
-[audit-compromise-sysadmins.md]
-[auditd.md]
-[audit-scripts.md]
-[awk.md]
-[a-z-nix-commands.md]
-[bash.md]
-[blue_team_watches.md]
-[bots_and_hack_attempts_example_logs.md]
-[camps.md]
-[certbot-tricks.md]
-[check_processes.md]
-[chromecast.md]
-[cidr-blocks-iptables.md]
-[cloudflare.md]
-[cmp.md]
-[commandlineFU.md]
-[cpio.md]
-[cron.md]
-[curl.md]
-[dnf-yum-tricks.md]
-[dns-tricks.md]
-[docker.md]
-[Elastic_hosts_commands.md]
-[Elastic_stack.md]
-[email.md]
-[export-users-linux.md]
-[File_compression.md]
-[file-permission-ticks.md]
-[finding-text-tricks.md]
-[find-modified-files-tricks.md]
-[firewalld.md]
-[Forensics_for_Linux.md]
-[gitlab.md]
-[git.md]
-[goaccess-tricks.md]
-[good-eats.md]
-[gpg.md]
-[grep.md]
-[grub.md]
-[Hard-Drives.md]
-[hardware-checks.md]
-[http.md]
-[iaas-servers.md]
-[icinga-notes.md]
-[index.md]
-[InfluxDB-install.md]
-[ipmp-cmds.md]
-[iptables-restrictions.md]
-[kali.md]
-[Kernel_working_the_linux_kernel.md]
-[Kibana.md]
-[kickstarter_files.md]
-[linux_directory_movement
-[load-checking-tricks.md]
-[load-checks.md]
-[Log_processing.md]
-[logs.md]
-[lsof.md]
-[lvm.md]
-[man-pages.md]
-[memory-monitor-tricks.md]
-[monitoring-servers.md]
-[mv_cmd.md]
-[mysql.md]
-[mysql-replication.md]
-[mysql-replication-setup-with-ssl.md]
-[netstat.md]
-[network-audit-scripts.md]
-[network-linux.md]
-[nginx_log_formats.md]
-[nginx.md]
-[nix-security-notes.md]
-[nmap.md]
-[nodejs.md]
-[notes.md]
-[offensive-security-guides.md]
-[openssl.md]
-[openvpn.md]
-[Operating-System-find.md]
-[ossec-install-notes.md]
-[other-scripts.md]
-[packages.md]
-[pam.md]
-[passwords.md]
-[pci-auditing-checks.md]
-[permissions-nix.md]
-[ping-nix.md]
-[Ports.md]
-[postfixtools.md]
-[postgres.md]
-[process.md]
-[proc.md]
-[psad.md]
-[README.md]
-[rsync.md]
-[Sandlfy_security_notes.md]
-[sar.md]
-[Security_log_patterns_searches.md]
-[security.md]
-[selinux.md]
-[setuid.md]
-[socat.md]
-[sort.md]
-[sql-injection-checks.md]
-[ssh-tricks.md]
-[ssl-tricks.md]
-[storage-space-tricks.md]
-[SUMMARY.md]
-[swap-checks.md]
-[systemctl.md]
-[tar.md]
-[tcpdump.md]
-[terraform.md]
-[tmux.md]
-[tomcat.md]
-[traceroute.md]
-[unpack-files-tricks.md]
-[Upgrade_Linux_paths_to_success.md]
-[user-reboot-tricks.md]
-[Users.md]
-[users-what_are_they_doing.md]
-[Vagrant.md]
-[vim.md]
-[vms.md]
-[yum.md]
-[zip-tricks.md]
+*	[about]	(about)
+*	[amazon.md]	(amazon.md)
+*	[ambulance-script.md]	(ambulance-script.md)
+*	[ansible.md]	(ansible.md)
+*	[Apache_Log_formats.md]	(Apache_Log_formats.md)
+*	[apache.md]	(apache.md)
+*	[audit-compromise-sysadmins.md]	(audit-compromise-sysadmins.md)
+*	[auditd.md]	(auditd.md)
+*	[audit-scripts.md]	(audit-scripts.md)
+*	[awk.md]	(awk.md)
+*	[a-z-nix-commands.md]	(a-z-nix-commands.md)
+*	[bash.md]	(bash.md)
+*	[blue_team_watches.md]	(blue_team_watches.md)
+*	[bots_and_hack_attempts_example_logs.md]	(bots_and_hack_attempts_example_logs.md)
+*	[camps.md]	(camps.md)
+*	[certbot-tricks.md]	(certbot-tricks.md)
+*	[check_processes.md]	(check_processes.md)
+*	[chromecast.md]	(chromecast.md)
+*	[cidr-blocks-iptables.md]	(cidr-blocks-iptables.md)
+*	[cloudflare.md]	(cloudflare.md)
+*	[cmp.md]	(cmp.md)
+*	[commandlineFU.md]	(commandlineFU.md)
+*	[cpio.md]	(cpio.md)
+*	[cron.md]	(cron.md)
+*	[curl.md]	(curl.md)
+*	[dnf-yum-tricks.md]	(dnf-yum-tricks.md)
+*	[dns-tricks.md]	(dns-tricks.md)
+*	[docker.md]	(docker.md)
+*	[Elastic_hosts_commands.md]	(Elastic_hosts_commands.md)
+*	[Elastic_stack.md]	(Elastic_stack.md)
+*	[email.md]	(email.md)
+*	[export-users-linux.md]	(export-users-linux.md)
+*	[File_compression.md]	(File_compression.md)
+*	[file-permission-ticks.md]	(file-permission-ticks.md)
+*	[finding-text-tricks.md]	(finding-text-tricks.md)
+*	[find-modified-files-tricks.md]	(find-modified-files-tricks.md)
+*	[firewalld.md]	(firewalld.md)
+*	[Forensics_for_Linux.md]	(Forensics_for_Linux.md)
+*	[gitlab.md]	(gitlab.md)
+*	[git.md]	(git.md)
+*	[goaccess-tricks.md]	(goaccess-tricks.md)
+*	[good-eats.md]	(good-eats.md)
+*	[gpg.md]	(gpg.md)
+*	[grep.md]	(grep.md)
+*	[grub.md]	(grub.md)
+*	[Hard-Drives.md]	(Hard-Drives.md)
+*	[hardware-checks.md]	(hardware-checks.md)
+*	[http.md]	(http.md)
+*	[iaas-servers.md]	(iaas-servers.md)
+*	[icinga-notes.md]	(icinga-notes.md)
+*	[index.md]	(index.md)
+*	[InfluxDB-install.md]	(InfluxDB-install.md)
+*	[ipmp-cmds.md]	(ipmp-cmds.md)
+*	[iptables-restrictions.md]	(iptables-restrictions.md)
+*	[kali.md]	(kali.md)
+*	[Kernel_working_the_linux_kernel.md]	(Kernel_working_the_linux_kernel.md)
+*	[Kibana.md]	(Kibana.md)
+*	[kickstarter_files.md]	(kickstarter_files.md)
+*	[linux_directory_movement	(linux_directory_movement
+*	[load-checking-tricks.md]	(load-checking-tricks.md)
+*	[load-checks.md]	(load-checks.md)
+*	[Log_processing.md]	(Log_processing.md)
+*	[logs.md]	(logs.md)
+*	[lsof.md]	(lsof.md)
+*	[lvm.md]	(lvm.md)
+*	[man-pages.md]	(man-pages.md)
+*	[memory-monitor-tricks.md]	(memory-monitor-tricks.md)
+*	[monitoring-servers.md]	(monitoring-servers.md)
+*	[mv_cmd.md]	(mv_cmd.md)
+*	[mysql.md]	(mysql.md)
+*	[mysql-replication.md]	(mysql-replication.md)
+*	[mysql-replication-setup-with-ssl.md]	(mysql-replication-setup-with-ssl.md)
+*	[netstat.md]	(netstat.md)
+*	[network-audit-scripts.md]	(network-audit-scripts.md)
+*	[network-linux.md]	(network-linux.md)
+*	[nginx_log_formats.md]	(nginx_log_formats.md)
+*	[nginx.md]	(nginx.md)
+*	[nix-security-notes.md]	(nix-security-notes.md)
+*	[nmap.md]	(nmap.md)
+*	[nodejs.md]	(nodejs.md)
+*	[notes.md]	(notes.md)
+*	[offensive-security-guides.md]	(offensive-security-guides.md)
+*	[openssl.md]	(openssl.md)
+*	[openvpn.md]	(openvpn.md)
+*	[Operating-System-find.md]	(Operating-System-find.md)
+*	[ossec-install-notes.md]	(ossec-install-notes.md)
+*	[other-scripts.md]	(other-scripts.md)
+*	[packages.md]	(packages.md)
+*	[pam.md]	(pam.md)
+*	[passwords.md]	(passwords.md)
+*	[pci-auditing-checks.md]	(pci-auditing-checks.md)
+*	[permissions-nix.md]	(permissions-nix.md)
+*	[ping-nix.md]	(ping-nix.md)
+*	[Ports.md]	(Ports.md)
+*	[postfixtools.md]	(postfixtools.md)
+*	[postgres.md]	(postgres.md)
+*	[process.md]	(process.md)
+*	[proc.md]	(proc.md)
+*	[psad.md]	(psad.md)
+*	[README.md]	(README.md)
+*	[rsync.md]	(rsync.md)
+*	[Sandlfy_security_notes.md]	(Sandlfy_security_notes.md)
+*	[sar.md]	(sar.md)
+*	[Security_log_patterns_searches.md]	(Security_log_patterns_searches.md)
+*	[security.md]	(security.md)
+*	[selinux.md]	(selinux.md)
+*	[setuid.md]	(setuid.md)
+*	[socat.md]	(socat.md)
+*	[sort.md]	(sort.md)
+*	[sql-injection-checks.md]	(sql-injection-checks.md)
+*	[ssh-tricks.md]	(ssh-tricks.md)
+*	[ssl-tricks.md]	(ssl-tricks.md)
+*	[storage-space-tricks.md]	(storage-space-tricks.md)
+*	[SUMMARY.md]	(SUMMARY.md)
+*	[swap-checks.md]	(swap-checks.md)
+*	[systemctl.md]	(systemctl.md)
+*	[tar.md]	(tar.md)
+*	[tcpdump.md]	(tcpdump.md)
+*	[terraform.md]	(terraform.md)
+*	[tmux.md]	(tmux.md)
+*	[tomcat.md]	(tomcat.md)
+*	[traceroute.md]	(traceroute.md)
+*	[unpack-files-tricks.md]	(unpack-files-tricks.md)
+*	[Upgrade_Linux_paths_to_success.md]	(Upgrade_Linux_paths_to_success.md)
+*	[user-reboot-tricks.md]	(user-reboot-tricks.md)
+*	[Users.md]	(Users.md)
+*	[users-what_are_they_doing.md]	(users-what_are_they_doing.md)
+*	[Vagrant.md]	(Vagrant.md)
+*	[vim.md]	(vim.md)
+*	[vms.md]	(vms.md)
+*	[yum.md]	(yum.md)
+*	[zip-tricks.md]	(zip-tricks.md)
