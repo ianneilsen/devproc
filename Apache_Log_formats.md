@@ -4,6 +4,8 @@
 
 {% embed url="https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat" %}
 
+* https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat
+
 
 {% hint style="info" %}
 Log format
