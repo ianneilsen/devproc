@@ -1,26 +1,47 @@
 ## Apache Log formats
 
-#### Good Links
+---
+description: >-
+  This page demos some apache configuration directives.
+---
+
+
+## Good Links
 
 https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat
 
-#### Notes
 
-The Apache log format and directory are generally in the /etc/apache2/httpd.conf configuration file.
-
+{% hint style="info" %}
 Log format
-By default, the Apache log configuration file defines two print formats: combined format and common format. You can also create your own customized log print format as needed.
+By default, the Apache log configuration file defines two print formats: combined format and common format. You can also create your own customized log print format as neede
+{% endhint %}
+
 
 Combined format:
-LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
-Common format:
-LogFormat "%h %l %u %t \"%r\" %>s %b" 
-Customized format:
+
+	LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+
+```Common format:```
+
+	LogFormat "%h %l %u %t \"%r\" %>s %b" 
+
+'''Customized format:'''
+
+{% code-tabs %}
+{% code-tabs-item title="payload.txt" %}
+```bash
 LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D %f %k %p %q %R %T %I %O" customized
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 You need to specify the print format, log file path, and log name of the current log in the Apache log configuration file. For example, the following log configuration file indicates that combined print format is used, and the log path and name is displayed as /var/log/apache2/access_log.
 
-CustomLog "/var/log/apache2/access_log" combined
+
+
 Field description
+------------------------
+
 Format	Key name	Description
 %a	client_addr	Client IP address.
 %A	local_addr	Local private IP address.
@@ -54,5 +75,7 @@ Format	Key name	Description
 
 
 Sample log
+--------------
+
 192.168.1.2 - - [02/Feb/2016:17:44:13 +0800] "GET /favicon.ico HTTP/1.1" 404 209 "http://localhost/x1.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36" 
 
