@@ -2,7 +2,7 @@
 
 ## Good Links
 
-{% EMBED URL="https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat" %}
+{% embed url="https://httpd.apache.org/docs/2.4/mod/mod_log_config.html#logformat" %}
 
 
 {% hint style="info" %}
@@ -15,11 +15,13 @@ By default, the Apache log configuration file defines two print formats: combine
 
 	LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 
-```Common format:```
+Common format:
+------------------
 
 	LogFormat "%h %l %u %t \"%r\" %>s %b" 
 
-```Customized format:```
+Customized format:
+--------------------
 
 {% code-tabs %}
 {% code-tabs-item title="payload.txt" %}
@@ -37,6 +39,7 @@ Field description
 ------------------------
 
 Format	Key name	Description
+=================================
 
 * %a	client_addr	Client IP address.
 * %A	local_addr	Local private IP address.
