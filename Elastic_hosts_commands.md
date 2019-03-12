@@ -1,11 +1,11 @@
 Elastic stack commands
 ========================
 
-
 Tools/scripts
 ====================
 
-ELASTIC TOOL - ON EACH SERVER
+
+ELASTIC guests info
 ----------------
 
 
@@ -41,11 +41,12 @@ Usage: elastic guests create
        elastic guests GUEST stats
 ```
 
-ATOP
+Elastic ATOP
 ----------
-atop
 
-PS
+       atop
+
+Elastic PS
 -----------
 
        ps aux --sort=-pcpu,+pmem |head -10
@@ -86,8 +87,7 @@ qemu-system-x86-fallback
 -name east5 new
 ```
 
-HOSTS - physical HOSTS
-==========
+## Elastic commands
 
 ```bash
 elastic
