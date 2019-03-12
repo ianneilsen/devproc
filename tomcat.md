@@ -1,0 +1,5 @@
+## tomcat how tos
+
+https://devtidbits.com/2015/12/08/nginx-as-a-reverse-proxy-to-apache-tomcat/
+
+
