@@ -19,7 +19,7 @@ https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-opens
 
 	curl --insecure -v https://www.example.com 2>&1 | awk 'BEGIN { cert=0 } /^\* Server certificate:/ { cert=1 } /^\*/ { if (cert) print }'
 
-https://www.ssllabs.com/ssltest/analyze.html?d=bits.example.com&s=45.56.73.12
+https://www.ssllabs.com/ssltest/
 https://docs.acquia.com/article/verifying-validity-ssl-certificate
 
 openssl s_client -connect example.com:443

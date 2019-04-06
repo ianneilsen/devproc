@@ -10,27 +10,13 @@ http://www.gregfreeman.io/2013/how-to-tell-if-your-php-site-has-been-compromised
 
 #### looking for suspect code in html or stylised web pages
 
-<code>
-style="display: none;"
-
-grep -r "="hidden"" interch/*
-
-iframe	
-</code>
-
-
 #### looking for md5 gzipinflate, encodings in pages
-
 
 #### looking for sql injectionin logs
 
-
 #### looking for user breachs
 
-
 #### logs
-
-	INPUTBODY:action=update
 
 	cat access_log* |grep "action=update"
 
@@ -47,15 +33,15 @@ What to look for:
 
 #### lsattr
 
-lsattr /usr/sbin | less
-lsattr /usr/bin | less
-lsattr /bin | less
-lsattr /sbin | less
+	lsattr /usr/sbin | less
+	lsattr /usr/bin | less
+	lsattr /bin | less
+	lsattr /sbin | less
 
 #### setgid checks
 
-find / -xdev -user root \( -perm -4000 -o -perm -2000 \)
+	find / -xdev -user root \( -perm -4000 -o -perm -2000 \)
 
 #### The following command searches for all .htaccess files in all subdirectories that contains ‘http’. This will list all redirect rules that may include malicious redirect
 
-find . -type f -name '\.htaccess' | xargs grep -i http;
+	find . -type f -name '\.htaccess' | xargs grep -i http;

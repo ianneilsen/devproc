@@ -18,7 +18,7 @@ https://www.rackaid.com/blog/how-to-block-ssh-brute-force-attacks/
 	
 ##### instead of using the proxycommand you can use the -J switch. Comma separate bastions for more than one jump
 
-	ssh -J root@bastionhost.example.com:22 root@example.server
+	ssh -J root@bastionhost.example.com:22 root@example.example.com
 
 ##### old way
 
