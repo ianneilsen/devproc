@@ -105,19 +105,19 @@ https://www.percona.com/blog/2016/03/16/change-user-password-in-mysql-5-7-with-p
 Older mysql
 -------------
 
-	UPDATE mysql.user SET Password=PASSWORD('#31#-u1z8-X7X5') WHERE USER='nrpe' AND Host='localhost';
+	UPDATE mysql.user SET Password=PASSWORD('password') WHERE USER='nrpe' AND Host='localhost';
 
-	alter user 'nrpe'@'localhost' identified by '#31#-u1z8-X7X5';
+	alter user 'nrpe'@'localhost' identified by 'passowrd';
 
 New mysql
 ---------
 
-	ALTER USER 'trippy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+	ALTER USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
 	GRANT ALL PRIVILEGES ON mydb.* TO 'myuser'@'%' WITH GRANT OPTION;
 	GRANT ALL PRIVILEGES ON databasename.* TO 'myuser'@'localhost' WITH GRANT OPTION;
 
-	GRANT ALL PRIVILEGES ON `db-name`.* TO 'trippy'@'localhost' WITH GRANT OPTION;
+	GRANT ALL PRIVILEGES ON `db-name`.* TO 'user'@'localhost' WITH GRANT OPTION;
 	FLUSH PRIVILEGES;
 	SHOW GRANTS FOR 'db-name'@'localhost';
 
