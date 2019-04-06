@@ -165,10 +165,10 @@ Output on master should look like the following. Note down the FILE and POSITION
 example 1
 --------------
 	server-id = 2 
-	master-host = 50.254.198.195
+	master-host = 192.0.2.1
 	master-connect-retry = 60 
 	master-user = replication
-	master-password = *YpX#OVVo&Ne76MMo2bK 
+	master-password = REDACTED 
 	replicate-do-db = database_name
 	log-bin = /var/log/mysql/mysql-bin.log
 	log_error = /var/log/mysql/error_slave.log
@@ -278,4 +278,3 @@ mysql> show master status;
 | mysql-bin.000002 |      154 | database_name |                  |                   |
 +------------------+----------+---------------+------------------+-------------------+
 1 row in set (0.00 sec)
-
