@@ -54,8 +54,6 @@ List all imported keys
 	dnf list installed | cat -n
 
 
-
-
 #### Finding on Debian/Ubuntu systems
 
 Debian / Ubuntu 	apt-cache show package 	Shows locally-cached info about a package.

@@ -70,8 +70,9 @@ Processes/Files/Users
 
 #### find malicious processes in linux
 
-  $ lsof -Pni
-  $ lsof -RPni <:portnumber>
+    lsof -Pni
+    lsof -RPni <:portnumber>
+ 
   $ lsof -Pnp <pid>
 
   $ lsof -i tcp:80 -P -R
@@ -125,7 +126,7 @@ Files
 #### find what files a process has open
 
   ls -l /proc/process-pid/*
-  losf -p process-pid
+  lsof -p process-pid
 
 OUTGOING connections
 --------------------------

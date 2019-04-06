@@ -1,8 +1,5 @@
 ## command line fu
 
-
-Links to good sites
+## Good reads
 
 https://www.commandlinefu.com/commands/browse
-
-

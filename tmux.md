@@ -4,6 +4,8 @@
 ### cheat sheet
 
 https://gist.github.com/MohamedAlaa/2961058
+http://neophob.com/2007/04/gnu-screen-cheat-sheet/
+
 
 #### create detached session foo	
 

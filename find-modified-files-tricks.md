@@ -1,10 +1,27 @@
 find modifed files tricks
 ===========================
 
+### Good links
+https://www.cyberciti.biz/faq/linux-unix-osxfind-files-by-date/
+https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux
+
+
 #### find all files with format 
 
-find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
+	find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
 
+#### Find all files by date 
+
+You need to use the grep command/egrep command to filter out info:
+
+	$ ls -lt /etc/ | grep filename
+	ls -lt /etc/ | grep 'Jun 20'
+
+A better and recommended solution is the find command:
+
+	find . -type f -ls |grep '2017'
+	find . -type f -ls |grep 'filename'
+	find /etc/ -type f -ls |grep '25 Sep'
 
 #### files which have changed in the last 30mins
 
@@ -20,8 +37,9 @@ find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d
 
 	find . -mtime -0
 
-find /home/mieow/ -mtime -0 | sort -r | more
-find . -mtime 0 -printf '%T+\t%s\t%p\n' 2>/dev/null | sort -r | more
+	find /home/mieow/ -mtime -0 | sort -r | more
+
+	find . -mtime 0 -printf '%T+\t%s\t%p\n' 2>/dev/null | sort -r | more
 
 #### Find files modified between - ctime relates to file  mtime relates to content.
 
@@ -42,11 +60,11 @@ find . -mtime 0 -printf '%T+\t%s\t%p\n' 2>/dev/null | sort -r | more
 
 #### files by modification time
 
-find srch_dir -mmin -60
+	find srch_dir -mmin -60
 
 #### find all files modified in last hour
 
-find . -mtime -1
+	find . -mtime -1
 	
 the . is the search path
 -mtime time parameter
@@ -54,27 +72,25 @@ the . is the search path
 
 #### access time
 
-find srch_dir -amin -60 
+	find srch_dir -amin -60 
 
 #### find all files with zero 0 - you can add alot more here, but this get you started.
 
-find $dir -size 0 -type f
+	find $dir -size 0 -type f
 
 ##### You may have to print the output sometimes.
 
-find "$dir" -size 0 -print
-
+	find "$dir" -size 0 -print
 
 #### pstree
 
-pstree -pa
-
+	pstree -pa
 
 #### diff
 
-diff -qr
+	diff -qr
 
-vimdiff fileName fileNAme
+	vimdiff fileName fileNAme
 
 colordiff
 

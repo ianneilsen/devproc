@@ -16,6 +16,16 @@ command is another way if it is installed
 
 # w
 
+Network
+===========
+
+netstat -anp
+lsof -V
+ps -ef
+netstat -rn
+lsmod
+
+
 ls
 ===============
 privelaged directories, look for hidden directories, weird permissions, atrributes or dates and times
@@ -48,6 +58,60 @@ directories examples
 ...
 % )'
 
+Files
+===========
+
+	find / -name \*.bin
+
+	find / -name \*.exe
+
+Create a timeline of all files on the system
+
+	find / -type f -printf "%P,%A+,%T+,%C+,%u,%g,%M,%s\n"
+
+
+
+Processes
+=====================
+
+Process tree:
+
+	ps -auxwf
+	pstree -Aup
+
+Open network ports or raw sockets:
+
+	netstat -nalp
+	netstat -plant
+	ss -a -e -i
+	lsof [many options]
+
+Deleted binaries still running:
+
+	ls -alR /proc/*/exe 2> /dev/null | grep deleted
+
+Process command name/cmdline:
+
+	strings /proc/<PID>/comm
+	strings /proc/<PID>/cmdline
+
+Real process path:
+
+	ls -al /proc/<PID>/exe
+
+Process environment:
+	
+	strings /proc/<PID>/environ
+
+Process working directory:
+
+	ls -alR /proc/*/cwd
+
+Process running from tmp, dev dirs:
+
+	ls -alR /proc/*/cwd 2> /dev/null | grep tmp
+	ls -alR /proc/*/cwd 2> /dev/null | grep dev
+
 
 lsattr - immutable flags
 ===============
@@ -57,12 +121,49 @@ often used to maintain persistence - so you need to remove immutable flags to re
 tampered or missing auditd logs. files that are not what they clam to be or are out of place binaries that are modifed or in strange locations
 when you start to find weird directories you will start to find weird files
 
-# lsattr -a /dir
+	lsattr -a /dir
+
+Immutable files and directories:
+
+	lsattr / -R 2> /dev/null | grep "\----i"
+
+Find SUID/SGID files:
+
+	find / -type f \( -perm -04000 -o -perm -02000 \) -exec ls -lg {} \;
+
+Files/dirs with no user/group name:
+
+	find / \( -nouser -o -nogroup \) -exec ls -lg {} \;
+
+Find executables anywhere, /tmp, etc.:
+
+	find / -type f -exec file -p '{}' \; | grep ELF
+
+Persistence areas:
+
+	/etc/rc.local, /etc/initd, /etc/rc*.d, /etc/modules, /etc/cron*, /var/spool/cron/*
+
+Package commands to find changed files:
+
+	rpm -Va | grep ^..5.
+	debsums -c
+
 
 User check
 ===============
 
 # awk -F: ''$3 == 0 && $1 !~ /root/ {print $1}'' /etc/passwd
+
+History files linked to /dev/null:
+
+	ls -alR / 2> /dev/null | grep .*history | grep null
+
+Find no user or nogroup
+
+find / -nouser
+
+find / -nogroup
+
 
 auditd
 ===============
@@ -99,18 +200,17 @@ look for commands in the tmp
 
 User tmps
 ===============
+Why is there a gap in the file
+if you have blanks, someone could have wipe logins
 
-# utmpdump < /var/run/utmp
+utmp = All current logins
+
+	utmpdump < /var/run/utmp
 
 [6] [00706] [tyS0] [LOGIN   ] [ttyS0       ] [                    ] [0.0.0.0        ] [Wed Aug 15 06:06:33 2018 UTC]
 [6] [00705] [tty1] [LOGIN   ] [tty1        ] [                    ] [0.0.0.0        ] [Wed Aug 15 06:06:33 2018 UTC]
 [8] [01328] [ts/1] [        ] [pts/1       ] [                    ] [64.64.64.64   ] [Wed Aug 15 10:06:35 2018 UTC]
 
-
-look at and understand your process id types
-
-Why is there a gap in the file
-if you have blanks, someone could have wipe logins
 
 	tomcat   ssh:notty    64.64.64.64      Sun Aug 12 19:10 - 19:10  (00:00)    
 	oracle   ssh:notty    64.64.64.64      Sun Aug 12 19:09 - 19:09  (00:00)    
@@ -118,25 +218,13 @@ if you have blanks, someone could have wipe logins
 	        ssh:notty    64.64.64.64      Sun Aug 12 19:08 - 19:08  (00:00)    
 	boss     ssh:notty    64.64.64.64      Sun Aug 12 19:08 - 19:08  (00:00)   
 
-# utmpdump < /var/log/btmp
+btmp = All Bad logins
 
-[6] [12658] [    ] [csgoserver] [ssh:notty   ] [64.64.64.64      ] [64.64.64.64 ] [Tue Aug 21 22:04:57 2018 UTC]
-[6] [14456] [    ] [admin   ] [ssh:notty   ] [64.64.64.64       ] [64.64.64.64  ] [Wed Aug 22 00:02:14 2018 UTC]
-[6] [10786] [    ] [user    ] [ssh:notty   ] [64.64.64.64       ] [164.64.64.64  ] [Wed Aug 22 00:34:44 2018 UTC]
-[6] [03507] [    ] [0       ] [ssh:notty   ] [64.64.64.64       ] [64.64.64.64  ] [Wed Aug 22 01:45:26 2018 UTC]
-[6] [16456] [    ] [22      ] [ssh:notty   ] [64.64.64.64       ] [64.64.64.64  ] [Wed Aug 22 02:01:10 2018 UTC]
+	utmpdump < /var/log/btmp
 
-# utmpdump < /var/log/wtmp 
+wtmp = All valid past logins
 
-Utmp dump of /dev/stdin
-[5] [00687] [tty1] [        ] [tty1        ] [                    ] [0.0.0.0        ] [Wed Aug 15 21:39:31 2018 EDT]
-[6] [00687] [tty1] [LOGIN   ] [tty1        ] [                    ] [0.0.0.0        ] [Wed Aug 15 21:39:31 2018 EDT]
-[7] [00687] [tty1] [root    ] [tty1        ] [                    ] [0.0.0.0        ] [Wed Aug 15 21:41:15 2018 EDT]
-[8] [00687] [tty1] [        ] [tty1        ] [                    ] [0.0.0.0        ] [Wed Aug 15 21:44:32 2018 EDT]
-[1] [00000] [~~  ] [shutdown] [~           ] [3.10.0-862.el7.x86_64] [0.0.0.0        ] [Wed Aug 15 21:44:34 2018 EDT]
-[2] [00000] [~~  ] [reboot  ] [~           ] [3.10.0-862.11.6.el7.x86_64] [0.0.0.0        ] [Wed Aug 15 21:44:52 2018 EDT]
-[1] [00051] [~~  ] [runlevel] [~           ] [3.10.0-862.11.6.el7.x86_64] [0.0.0.0        ] [Wed Aug 15 21:44:54 2018 EDT]
-
+	utmpdump < /var/log/wtmp 
 
 
 Find files/confs
@@ -248,3 +336,4 @@ For example in real life on busy clustered hosting server some time we remove 5-
 
 # find / -nogroup -nouse
 
+\n

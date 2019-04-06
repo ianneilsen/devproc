@@ -28,4 +28,10 @@ The kill process kills all processes with name "process_name"
 
 	kill -9 $(pgrep process_name)
 
+Grep in ps and kill by pid number
+
+ps auwxf |grep 193.29.13.110 |awk '{print $2}' |xargs kill -9
+
+
+
 

@@ -28,6 +28,16 @@ https://www.rackaid.com/blog/how-to-block-ssh-brute-force-attacks/
 
 http://www.sbarjatiya.com/notes_wiki/index.php/Tunneling_using_SSH_server_listening_on_port_443
 
+Tunnelling via a bastion host forwarding ports back to your machine. Good for viewing a whitelisted web server
+
+	ssh user@123.123.123.123 -J bastionhost.example.com -L 3080:127.0.0.1:80
+
+	sshp server_user@123.123.123.123 -L3080:localhost:80
+
+	ssh -A admin@bastionhost.example.com -L 127.0.0.1:3080:127.0.0.1:3080
+
+	ssh -A server_user@123.123.123.123 -J bastion.example.com -L 127.0.0.1:3080:127.0.0.1:80
+
 #### ssh key gen
 
 	ssh-keygen -t rsa -b 4096 -C "name@email_address.com"

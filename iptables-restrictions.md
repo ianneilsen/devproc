@@ -1,5 +1,9 @@
 ## iptables
 
+#### Good reads
+
+https://crm.vpscheap.net/knowledgebase.php?action=displayarticle&id=29
+
 #### show all rules/chains
 
 	iptables -L -n --line-numbers
@@ -50,13 +54,16 @@ You might also want to log all the dropped packets. These rules should be at the
 
 First, create a new chain called LOGGING.
 
-iptables -N LOGGING
+	iptables -N LOGGING
+
 Next, make sure all the remaining incoming connections jump to the LOGGING chain as shown below.
 
-iptables -A INPUT -j LOGGING
+	iptables -A INPUT -j LOGGING
+
 Next, log these packets by specifying a custom “log-prefix”.
 
-iptables -A LOGGING -m limit --limit 2/min -j LOG --log-prefix "IPTables Packet Dropped: " --log-level 7
+	iptables -A LOGGING -m limit --limit 2/min -j LOG --log-prefix "IPTables Packet Dropped: " --log-level 7
+
 Finally, drop these packets.
 
 iptables -A LOGGING -j DROP
