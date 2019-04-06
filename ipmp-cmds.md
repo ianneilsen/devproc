@@ -18,8 +18,8 @@ ipmitool lan set 1 auth ADMIN MD2 MD5 PASSWORD
 ipmitool lan set 1 access on
 
 
-ipmitool -H 192.0.2.17 -U example lan print 1
-ipmitool -H 206.191.128.140 -U example lan print 1
+ipmitool -H 192.0.2.17 -U ian lan print 1
+ipmitool -H 192.192.192.192 -U ian lan print 1
 
 
 ipmitool user list 2

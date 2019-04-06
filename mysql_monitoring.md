@@ -18,10 +18,6 @@ Use Apache jmeter to load test
 Look for errors in phplog or mysql logs
 such as ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
 
-The error (2300) has special meaning - see the mysql docs for a full list of error codes
-	
-	PDO Exception: SQLSTATE[HY000] [2013] Lost connection to MySQL server at 'reading authorization packet', system error: 0
-	PDO Exception: SQLSTATE[HY000] [2003] Can't connect to MySQL server on 'champdb.retrievalmasters.com' (4)
 
 ## Warnings
 
