@@ -26,3 +26,4 @@ literal:192.168.1.37==>192.0.1.3
 ```
 
 Im slowing porting this into a local model to assist new users when working on systems.
+I have tens of scripts to help speed up your daily grind - sharing is caring - stay tuned
