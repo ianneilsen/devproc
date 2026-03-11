@@ -14,93 +14,130 @@ https://linux-audit.com/determine-file-and-related-package/
 
 List all files of a package
 
-	rpm -ql BitTorrent
+```bash
+rpm -ql BitTorrent
+```
 
 Show me recently installed package
 
-	rpm -qa --last
+```bash
+rpm -qa --last
+```
 
 query information of a package
 
-	rpm -qi vsftpd
+```bash
+rpm -qi vsftpd
+```
 
 verify a rpm
 
-	rpm -Vp sqlbuddy-1.3.3-1.noarch.rpm
+```bash
+rpm -Vp sqlbuddy-1.3.3-1.noarch.rpm
+```
 
 Import a rpm key
 
-	rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+```bash
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+```
 
 List all imported keys
 
-	rpm -qa gpg-pubkey*
+```bash
+rpm -qa gpg-pubkey*
+```
 
 #### Finding using DNF
 
-	dnf info packageName
+```bash
+dnf info packageName
+dnf list installed
+dnf repolist
+dnf --enablerepo=*fedora install nano
+dnf remove httpd
+dnf erase httpd
+```
 
-	dnf list installed
+remove all packages from a repo list
 
-	dnf repolist
-
-	dnf --enablerepo=*fedora install nano
-
-	dnf remove httpd
-	dnf  erase httpd
-
-	remove all packages from a repo list
-	dnf -v repolist
-	dnf list installed | cat -n
-
+```bash
+dnf -v repolist
+dnf list installed | cat -n
+```
 
 #### Finding on Debian/Ubuntu systems
 
-Debian / Ubuntu 	apt-cache show package 	Shows locally-cached info about a package.
+Debian / Ubuntu - Shows locally-cached info about a package.
 
-	apt show package 	
-	dpkg -s package 	Shows the current installed status of a package.
+```bash
+apt-cache show package
+apt show package
+dpkg -s package
+```
 
-CentOS 	yum info package 	
+CentOS
 
-	yum deplist package 	Lists dependencies for a package.
+```bash
+yum info package
+yum deplist package
+```
 
-Fedora 	dnf info package 	
+Fedora
 
-	dnf repoquery --requires package 	Lists dependencies for a package.
+```bash
+dnf info package
+dnf repoquery --requires package
+```
 
-FreeBSD Packages 	
+FreeBSD Packages - Shows info for an installed package.
 
-	pkg info package 	Shows info for an installed package.
+```bash
+pkg info package
+```
 
-Debian / Ubuntu 	sudo dpkg -i package.deb 	
+Debian / Ubuntu
 
-	sudo apt-get install -y gdebi && sudo gdebi package.deb 	Installs and uses gdebi to install package.deb and retrieve any missing dependencies.
+```bash
+sudo dpkg -i package.deb
+sudo apt-get install -y gdebi && sudo gdebi package.deb
+```
 
-CentOS 	sudo yum install package.rpm 	
-Fedora 	sudo dnf install package.rpm 	
-FreeBSD Packages 	sudo pkg add package.txz 	
-	sudo pkg add -f package.txz 	Installs package even if already installed.
+CentOS / Fedora / FreeBSD
 
-Debian / Ubuntu 	sudo apt-get remove package 	
-	sudo apt remove package 	
-	sudo apt-get autoremove 	Removes unneeded packages.
+```bash
+sudo yum install package.rpm
+sudo dnf install package.rpm
+sudo pkg add package.txz
+sudo pkg add -f package.txz
+```
 
-CentOS 	sudo yum remove package 	
+Debian / Ubuntu - Remove packages
 
-Fedora 	sudo dnf erase package 	
+```bash
+sudo apt-get remove package
+sudo apt remove package
+sudo apt-get autoremove
+```
 
-FreeBSD Packages 	sudo pkg delete package 	
-	sudo pkg autoremove 	Removes unneeded packages.
+CentOS / Fedora / FreeBSD - Remove packages
 
-FreeBSD Ports 	sudo pkg delete package 	
-	cd /usr/ports/path_to_port && make deinstall 	De-installs an installed port.
+```bash
+sudo yum remove package
+sudo dnf erase package
+sudo pkg delete package
+sudo pkg autoremove
+cd /usr/ports/path_to_port && make deinstall
+```
 
 Debian/Ubuntu
-apt-get update 	apt update
-apt-get dist-upgrade 	apt full-upgrade
-apt-cache search string 	apt search string
-apt-get install package 	apt install package
-apt-get remove package 	apt remove package
-apt-get purge package 	apt purge package
+
+```bash
+apt-get update
+apt-get dist-upgrade
+apt-cache search string
+apt-get install package
+apt-get remove package
+apt-get purge package
+```
 

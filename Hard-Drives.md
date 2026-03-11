@@ -17,6 +17,7 @@ https://unix.stackexchange.com/questions/121757/harddisk-serial-number-from-term
 
 #### Working storage on linux
 
+```bash
 Partitions
 
 LVM
@@ -28,3 +29,4 @@ LUKS
 SWAP
 
 RESIZE drives.
+```

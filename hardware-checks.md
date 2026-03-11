@@ -2,21 +2,29 @@
 
 #### mpstat
 
+```bash
 mpstat -P ALL 1
+```
 
 #### strace
 
+```bash
 strace
+```
 
 #### dmesg
 
-	dmesg |grep -i DMI
+```bash
+dmesg |grep -i DMI
+```
 
 #### proc
 
 Example
 
-	cat /proc/scsi
+```bash
+cat /proc/scsi
+```
 
 #### lscpu
 
@@ -24,11 +32,15 @@ Example
 
 --short
 
+```bash
 lshw -C system
+```
 
 #### hwinfo
 
+```bash
 hwinfo |egrep "vendor"
+```
 
 #### lspci
 
@@ -52,19 +64,20 @@ hwinfo |egrep "vendor"
 
 #### smartctl -a
 
-
+```bash
 dmidecode -t
-will show yout he types available. YOu can use a number or the name to print only specific sections. NUmbers start from 0(zero) as position 1.
+```
+
+will show you the types available. You can use a number or the name to print only specific sections. Numbers start from 0(zero) as position 1.
 
 or you can pass the name such as;
- 
+
+```bash
 dmidecode -t bios
-
 dmidecode -t system
-
 dmidecode -t processor
-
 dmidecode -t memory
+```
 
 
 

@@ -5,66 +5,98 @@ https://unix.stackexchange.com/questions/138398/how-to-get-lines-10-to-100-from-
 
 #### To find files by case-insensitive extension (ex: .jpg, .JPG, .jpG):
 
-	find . -iname "*.jpg"
+```bash
+find . -iname "*.jpg"
+```
 
 #### To find directories:
 
-	find . -type d
+```bash
+find . -type d
+```
 
 #### To find files:
 
-	find . -type f
+```bash
+find . -type f
+```
 
 #### To find files by octal permission:
 
-	find . -type f -perm 777
+```bash
+find . -type f -perm 777
+```
 
 #### To find files with setuid bit set:
 
-	find . -xdev \( -perm -4000 \) -type f -print0 | xargs -0 ls -l
+```bash
+find . -xdev \( -perm -4000 \) -type f -print0 | xargs -0 ls -l
+```
 
 #### To find files with extension '.txt' and remove them:
 
-	find ./path/ -name '*.txt' -exec rm '{}' \;
+```bash
+find ./path/ -name '*.txt' -exec rm '{}' \;
+```
 
 #### To find files with extension '.txt' and look for a string into them:
 
-	find ./path/ -name '*.txt' | xargs grep 'string'
+```bash
+find ./path/ -name '*.txt' | xargs grep 'string'
+```
 
 #### To find files with size bigger than 5 Mebibyte and sort them by size:
 
-	find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
+```bash
+find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
+```
 
 #### To find files bigger than 2 Megabyte and list them:
 
-	find . -type f -size +200000000c -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+```bash
+find . -type f -size +200000000c -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+```
 
 #### To find files modified more than 7 days ago and list file information
 
-	find . -type f -mtime +7d -ls
+```bash
+find . -type f -mtime +7d -ls
+```
 
 #### To find symlinks owned by a user and list file information
 
-	find . -type l --user=username -ls
+```bash
+find . -type l --user=username -ls
+```
 
 #### To search for and delete empty directories
 
-	find . -type d -empty -exec rmdir {} \;
+```bash
+find . -type d -empty -exec rmdir {} \;
+```
 
 #### To search for directories named build at a max depth of 2 directories
-	
-	find . -maxdepth 2 -name build -type d
+
+```bash
+find . -maxdepth 2 -name build -type d
+```
 
 #### To search all files who are not in .git directory
 
-	find . ! -iwholename '*.git*' -type f
+```bash
+find . ! -iwholename '*.git*' -type f
+```
 
 #### To find all files that have the same node (hard link) as MY_FILE_HERE
 
-	find . -type f -samefile MY_FILE_HERE 2>/dev/null
+```bash
+find . -type f -samefile MY_FILE_HERE 2>/dev/null
+```
 
 #### To find all files in the current directory and modify their permissions
 
-	find . -type f -exec chmod 644 {} \;
+```bash
+find . -type f -exec chmod 644 {} \;
+```
 
 

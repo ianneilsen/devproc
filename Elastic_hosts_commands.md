@@ -9,16 +9,20 @@ ELASTIC guests info
 ----------------
 
 
-       elastic guests list | elastic guests info | grep email | cut -d " " -f2
-       elastic  guests
-       elastic  guests list
-       elastic  guests info
-       elastic  guests info ee06dbc2-39d7-4c20-9fc7-86d6930bab23
-       elastic  guests ee06dbc2-39d7-4c20-9fc7-86d6930bab23 info
+```bash
+elastic guests list | elastic guests info | grep email | cut -d " " -f2
+elastic guests
+elastic guests list
+elastic guests info
+elastic guests info ee06dbc2-39d7-4c20-9fc7-8000000ab23
+elastic guests ee06dbc2-39d7-4c20-9fc7-00000000bab23 info
+```
 
 THE FOLLOWING TELLS ME ABOUT A VM - VM BEING B243....
 
-       elastic guests b243bae6-46b2-4aa7-850f-d5aecfa478b1 info
+```bash
+elastic guests b243bae6-46b2-4aa7-850f-0000000478b1 info
+```
 
 ```bash
 Usage: elastic guests create
@@ -44,12 +48,16 @@ Usage: elastic guests create
 Elastic ATOP
 ----------
 
-       atop
+```bash
+atop
+```
 
 Elastic PS
 -----------
 
-       ps aux --sort=-pcpu,+pmem |head -10
+```bash
+ps aux --sort=-pcpu,+pmem |head -10
+```
 
 
 Example output which has been cleaned up for easier reading
@@ -68,7 +76,7 @@ COMMAND (WHICH IS BELOW)
 qemu-system-x86-fallback 
 -enable-kvm 
 -runas 65546:65546 
--pidfile /var/lib/guests/eaa5e731-a23b-48ca-855f-950bcf83d3da/qemu.pid 
+-pidfile /var/lib/guests/eaa5e731-a23b-48ca-855f-000000003d3da/qemu.pid 
 -nodefaults 
 -m 2048 
 -smp sockets=1,cores=4 
@@ -76,14 +84,14 @@ qemu-system-x86-fallback
 -vga cirrus 
 -usbdevice tablet 
 -uuid eaa5e731-a23b-48ca-855f-950bcf83d3da 
--smbios file=/var/lib/guests/eaa5e731-a23b-48ca-855f-950bcf83d3da/smbios.bin 
+-smbios file=/var/lib/guests/eaa5e731-a23b-48ca-855f-0000000d3da/smbios.bin 
 -boot order=cd,menu=off 
 -drive if=none,id=ide.0.0,format=raw,cache=writeback,file=/dev/mapper/guest:eaa5e731-a23b-48ca-855f-950bcf83d3da:ide:0:0 
 -device ide-drive,bus=ide.0,unit=0,bootindex=1,drive=ide.0.0 
 -device e1000,id=nic.0,mac=56:0b:cf:83:d3:da,netdev=vlan.0 
 -netdev tap,id=vlan.0,ifname=vnet10.0, script=no,downscript=no 
 -vnc :221,password,websocket=6122 
--monitor unix:/var/lib/guests/eaa5e731-a23b-48ca-855f-950bcf83d3da/monitor,server,nowait 
+-monitor unix:/var/lib/guests/eaa5e731-a23b-48ca-855f-0000003d3da/monitor,server,nowait 
 -name east5 new
 ```
 

@@ -18,30 +18,39 @@ http://www.gregfreeman.io/2013/how-to-tell-if-your-php-site-has-been-compromised
 
 #### logs
 
+```bash
 	cat access_log* |grep "action=update"
 
 	cd /var/log/httpd
 	for i in `ls * |grep access`; do echo $i && grep wget $i; done
 	for i in `ls * |grep access`; do echo $i && grep curl $i; done
-
+```
 
 What to look for:
 
+```bash
     netstat -natp : Looks for any suspicious connections running on odd ports
     ps -wauxxef : look for suspicious files like bash running under www context
     lsof <pid> : helps to determine where the pid above is running from
+```
 
 #### lsattr
 
+```bash
 	lsattr /usr/sbin | less
 	lsattr /usr/bin | less
 	lsattr /bin | less
 	lsattr /sbin | less
+```
 
 #### setgid checks
 
+```bash
 	find / -xdev -user root \( -perm -4000 -o -perm -2000 \)
+```
 
 #### The following command searches for all .htaccess files in all subdirectories that contains ‘http’. This will list all redirect rules that may include malicious redirect
 
+```bash
 	find . -type f -name '\.htaccess' | xargs grep -i http;
+```

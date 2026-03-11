@@ -11,14 +11,11 @@ https://docs.docker.com/engine/reference/commandline/docker/#child-commands
 
 ### Common docker cmds
 
+```bash
 docker ps
-
 docker ls
-
 docker top NameOfContainer
-
 docker update
-
 docker exec -it containerName bash
-
 docker logs --folow containername
+```

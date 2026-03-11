@@ -3,10 +3,13 @@
 
 #### check modules
 
+```bash
 lsmod
+```
 
 #### Add a kernel module
 
+```bash
 	/etc/modules-load.d
 
 	modprobe name
@@ -14,6 +17,7 @@ lsmod
 
 	insmod
 	rmmod
+```
 
 #### Check modules
 
