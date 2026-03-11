@@ -6,23 +6,31 @@ https://www.rackaid.com/blog/how-to-block-ssh-brute-force-attacks/
 
 #### ssh agent issues
 
+```bash
 	set | grep ^SSH
 	eval `ssh-agent -s`
 	set | grep ^SSH
 	ssh-add -D
 	ssh-add -c /home/mieow/.ssh/ep/ian_ep
+```
 
 #### ssh key cmds
 
+```bash
 	ssh-add wherIsMyKey
-	
+```
+
 ##### instead of using the proxycommand you can use the -J switch. Comma separate bastions for more than one jump
 
+```bash
 	ssh -J root@bastionhost.example.com:22 root@example.example.com
+```
 
 ##### old way
 
+```bash
 	$ ssh -o ProxyCommand="ssh -W %h:%p jumphost.example.org" server.example.org
+```
 
 #### ssh tunneling
 
@@ -30,6 +38,7 @@ http://www.sbarjatiya.com/notes_wiki/index.php/Tunneling_using_SSH_server_listen
 
 Tunnelling via a bastion host forwarding ports back to your machine. Good for viewing a whitelisted web server
 
+```bash
 	ssh user@123.123.123.123 -J bastionhost.example.com -L 3080:127.0.0.1:80
 
 	sshp server_user@123.123.123.123 -L3080:localhost:80
@@ -37,29 +46,40 @@ Tunnelling via a bastion host forwarding ports back to your machine. Good for vi
 	ssh -A admin@bastionhost.example.com -L 127.0.0.1:3080:127.0.0.1:3080
 
 	ssh -A server_user@123.123.123.123 -J bastion.example.com -L 127.0.0.1:3080:127.0.0.1:80
+```
 
 #### ssh key gen
 
+```bash
 	ssh-keygen -t rsa -b 4096 -C "name@email_address.com"
+```
 
 #### check your ssh ket RSA fingerprint
 
+```bash
 	ssh-keygen -lf id_rsa.pub
+```
 
 #### ssh with port forwarding back to your own machine
 
+```bash
 	ssh -L 5901:localhost:5901 root@example.com.server
+```
 
 The above example will allow me to run vnc from a local remina client. You can change port and do mytsql or whatever you like.
 Port 443, 80, 190, 53, etc etc.
 
 #### ssh with x server to run a local application
 
+```bash
 	ssh -X
+```
 
 #### ssh without using your keys
 
+```bash
 	ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no root@host.example.com
+```
 
 #### tunneling through ports
 
@@ -75,7 +95,9 @@ To establish the connection, we will pass the -D flag along with the local port 
 
 For instance, to establish a tunnel on port "7777", you can type:
 
+```bash
 	ssh -f -N -D 7777 username@remote_host
+```
 
 #### tunnleing remotely
 
@@ -97,17 +119,23 @@ These are given, in the order above (separated by colons), as arguments to the -
 
 For instance, to connect to example.com on port 80 on our local computer, making the connection available on our remote host on port 8888, you could type:
 
+```bash
 	ssh -f -N -R 8888:example.com:80 username@remote_host
+```
 
 Now, on the remote host, opening a web browser to 127.0.0.1:8888 would allow you to see whatever content is at example.com on port 80.
 
 A more general guide to the syntax is:
 
+```bash
 	ssh -R remote_port:site_or_IP_to_access:site_port username@host
+```
 
 Since the connection is in the background, you will have to find its PID to kill it. You can do so by searching for the port you forwarded:
 
+```bash
 	ps aux | grep 8888
+```
 
 
 #### local tunneling
@@ -130,14 +158,20 @@ These are given, in the order above (separated by colons), as arguments to the -
 
 For instance, to connect to example.com on port 80 on your remote host, making the connection available on your local machine on port 8888, you could type:
 
+```bash
 	ssh -f -N -L 8888:example.com:80 username@remote_host
+```
 
 Now, if you point your local web browser to 127.0.0.1:8888, you should see whatever content is at example.com on port 80.
 
 A more general guide to the syntax is:
 
+```bash
 	ssh -L your_port:site_or_IP_to_access:site_port username@host
+```
 
 Since the connection is in the background, you will have to find its PID to kill it. You can do so by searching for the port you forwarded:
 
+```bash
 	ps aux | grep 8888
+```

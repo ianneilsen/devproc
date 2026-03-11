@@ -1,25 +1,34 @@
 ## Security log patterns
 
+Old school log checks
+
 #### Good Links
 
 #### Basic grep/awk patterns
 
+```bash
 	cat access.log |grep "union"
 
 	grep ../etc/passwd
+```
 
 PhP web shells - obviously if you have a PHP app then this will become a little harder to track down. 
 But a 200 success http code might indicate a successful shell
 
+```bash
 	grep *.php?
 	grep *.php? with a 200 success
+```
 
 Single quote
 
+```bash
 	grep %27
+```
 
 Something like user=%27  may indicate a sqlinjection test. Oldie but a goodie
 
+```bash
     grep -B 3 -A 2 'INVALID USER' /VAR/LOG/AUTH.LOG
     grep -B 3 -A 2 'cat=5218+union' access_log*
 
@@ -27,38 +36,52 @@ Something like user=%27  may indicate a sqlinjection test. Oldie but a goodie
 
     grep "AUTHENTICATION FAILURE" /VAR/LOG/AUTH.LOG | CUT -D '=' -F 8
     awk '/SSHD.*INVALID USER/ { PRINT $9 }' /VAR/LOG/AUTH.LOG
+```
 
 Filter on errors
 
+```bash
     grep '.ERR&GT;' /VAR/LOG/AUTH.LOG
 
     cat /var/log/apache2/access.log | grep -E "wp-admin|wp-login|POST /"
+```
 
 run a for i in statement for numbers in .php files /wordpress/wp-content/r57.php?28 200
 
 Example sqlinjection
 
+```bash
      UNION ALL SELECT (SELECT CONCAT(0x7171787671,IFNULL(CAST(ID AS CHAR),0x20),0x616474686c76,IFNULL(CAST(display_name AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_activation_key AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_email AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_login AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_nicename AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_pass AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_registered AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_status AS CHAR),0x20),0x616474686c76,IFNULL(CAST(user_url AS CHAR),0x20),0x71707a7871) FROM wp.wp_users LIMIT 0,1),NULL,NULL--
+```
 
 Check for table name
 
+```bash
     grep -B 3 -A 3 'TABLE_NAME+limit' access_log* |awk -F: '{print $1 $2 $5}'
+```
 
 #### check for binary in logs
 
+```bash
 	grep [[:cntrl:]] /var/log/*.log
+```
 
 #### look for all POST commands to server
 
+```bash
   cat ssl_request_log* |grep POST
+```
 
 #### ps
 
+```bash
   ps -ef | head -1; ps -ef | grep "your-pattern-goes-here"
   ps awuxf
+```
 
 #### ep patterns
 
+```bash
   grep ‘\(^\|[^0-9]\)\{1\}\([345]\{1\}[0-9]\{3\}\|6011\)\{1\}[-]\?[0-9]\{4\}[-]\?\[0-9]\{2\}[-]\?[0-9]\{2\}-\?[0-9]\{1,4\}\($\|[^0-9]\)\{1\}’ FILE_TO_SEARCH
 
   grep ‘\([345]\{1\}[0-9]\{3\}\|6011\)\{1\}[ -]\?[0-9]\{4\}[ -]\?[0-9]\{2\}[-]\?[0-9]\{2\}[ -]\?[0-9]\{1,4\}’ –color -H -n FILE_TO_SEARCH
@@ -217,3 +240,4 @@ Check for table name
  
   xzgrep -Ev ".*(qrcode|code128|barcode).*\b[3456][0-9]{3}[-\[:space:]\[:digit:]][0-9]{3,4}[-\[:space:]\[:digit:]][0-9]{3,4}[-\[:space:]\[:digit:]][0-9]{1,4}" *.xz
   xzgrep -Ev ".*(qrcode|code128|barcode).*\b[3456][0-9]{3}[-\[:space:]\[:digit:]][0-9]{3,4}[-\[:space:]\[:digit:]][0-9]{3,4}[-\[:space:]\[:digit:]][0-9]{1,4}" *.xz
+```
