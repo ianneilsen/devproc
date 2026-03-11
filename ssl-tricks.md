@@ -100,7 +100,7 @@ https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with
 
 https://support.rackspace.com/how-to/generate-a-csr-with-openssl/
 
-	openssl req -new -sha256 -key www.exampleeconomics.org.2018.key -out www.exampleeconomics.org.2018.csr
+	openssl req -new -sha256 -key www.example.org.2018.key -out www.example.org.2018.csr
 
 #### basic setup
 

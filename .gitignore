@@ -1,0 +1,33 @@
+# Sensitive data scrubbing - never commit
+expressions.txt
+
+# GitBook build output
+_book/
+.gitbook/
+.cache/
+
+# Node (if serving GitBook locally)
+node_modules/
+npm-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.#*
+\#*\#
+
+# Backup / temp files
+*.bak
+*.orig
+*.tmp
