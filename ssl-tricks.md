@@ -5,7 +5,9 @@
 http://movingpackets.net/2015/03/16/five-essential-openssl-troubleshooting-commands/
 https://www.opsdash.com/blog/check-ssl-certificate.html
 
+```bash
 	openssl verify -verbose -x509_strict -CAfile *.example.com.pem -CApath nosuchdir *.example.com.pem
+```
 
 ### Great Tools
 
@@ -17,11 +19,14 @@ https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-opens
 
 #### Checking certs
 
+```bash
 	curl --insecure -v https://www.example.com 2>&1 | awk 'BEGIN { cert=0 } /^\* Server certificate:/ { cert=1 } /^\*/ { if (cert) print }'
+```
 
 https://www.ssllabs.com/ssltest/
 https://docs.acquia.com/article/verifying-validity-ssl-certificate
 
+```bash
 openssl s_client -connect example.com:443
 openssl s_client -connect example.com:443 -tls1_2
 openssl s_client -showcerts -connect example.com:443
@@ -34,6 +39,8 @@ nmap -p 443 --script ssl-cert example.com
 nmap -p 443 --script ssl-cert example.com
 
 curl --insecure -v https://example.com
+
+```
 
 #### Check cert chains
 
@@ -54,32 +61,43 @@ https://knowledge.digicert.com/solution/SO26630.html
 
 Check a Certificate Signing Request (CSR)
 
-	openssl req -text -noout -verify -in CSR.csr
+```bash
+openssl req -text -noout -verify -in CSR.csr
+```
 
 Check a private key
 
-	openssl rsa -in privateKey.key -check
+```bash
+openssl rsa -in privateKey.key -check
+```
 
 Check a certificate
 
-	openssl x509 -in certificate.crt -text -noout
+```bash
+openssl x509 -in certificate.crt -text -noout
+```
 
 Check a PKCS#12 file (.pfx or .p12)
 
+```bash
 	openssl pkcs12 -info -in keyStore.p12
+```
 
 #### generate a new csr from a new key
 
+```bash
 	openssl req -new -newkey rsa:2048 -nodes -keyout private/www.example.com.key -out csr/www.example.com.csr
+```
 
 #### Alertnative - creating a star * certificate
 
+```bash
 	openssl genrsa -out *.example.com.key 4096
 
 	openssl req -new -key *.example.com.key -out *.example.com.csr
 
 	openssl req -new -newkey rsa:2048 -nodes -keyout *.example.com.key -out *.example.com.csr
-
+```
 
 #### Links to other pages
 
@@ -100,7 +118,9 @@ https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with
 
 https://support.rackspace.com/how-to/generate-a-csr-with-openssl/
 
+```bash
 	openssl req -new -sha256 -key www.example.org.2018.key -out www.example.org.2018.csr
+```
 
 #### basic setup
 
@@ -108,10 +128,13 @@ To generate a CSR on Nginx, please do the following:
 
 Login to your server via your terminal client (ssh). The first step will be generating the private key.  At the prompt, type:
 
+```bash
 	openssl genrsa -out [private-key-file.key] 2048
- 
+```
+
 Once the private key has been generated, run the command below to generate the CSR.
 
+```bash
 	openssl req -new -key [private-key-file.key] -out [CSR-file.txt] 
 
 - Country Name (C): Use the two-letter code without punctuation for country, for example: US or CA.
