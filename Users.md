@@ -7,6 +7,7 @@ https://unix.stackexchange.com/questions/1373/how-do-i-switch-from-an-unknown-sh
 
 #### su to user with nologin
 
+```bash
 	su - named -s /bin/bash
 
 
@@ -19,3 +20,5 @@ tar -zcvpf /root/tmp/clone/mail.tar.gz /var/spool/mail
 tar -zcvpf /root/tmp/clone/home.tar.gz /home
 tar -zcvpf /root/tmp/clone/openvpn.tar.gz /etc/openvpn
 tar -zcvpf /root/tmp/clone.tar.gz /root/tmp/clone
+
+```
