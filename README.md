@@ -1,5 +1,4 @@
 # devprocsys
-devprocsys
 
 Personal notes of dev-oping, blueteam, Red Team and daily sys admin stuff
 
@@ -14,7 +13,8 @@ If using this repo - implement a expressions.txt file so that you do not commit 
 
 example of literal regex's to write inside of expressions.txt file. Be creative and think.
 
-'''
+```bash
+
 literal:passw03d==>REDACTED
 literal:mypassword==>REDACTED
 literal:bastionhost.com==>bastionhost.example.com
@@ -22,4 +22,5 @@ literal:domain==>example
 literal:inventorylive==>database_name
 literal:ssl_prodbc==>ssl-certs
 literal:192.168.1.37==>192.0.1.3
-'''
+
+```
